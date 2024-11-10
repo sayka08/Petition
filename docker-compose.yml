@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: petition_app
+    ports:
+      - "8000:8000"
+    environment:
+      - SQL_DB_URL=${SQL_DB_URL}  # Указываем путь к базе данных
+    volumes:
+      - ./db:/app/db  # Монтируем папку db с хоста в контейнер
+    networks:
+      - petition_network
+
+networks:
+  petition_network:
+    driver: bridge
