@@ -14,7 +14,6 @@ session_local = sessionmaker(autoflush=False, autocommit=False, bind=engine)
 
 Base = declarative_base()
 
-# Функция для получения сессии, которая будет использована как зависимость
 def get_db():
     db = session_local()
     try:

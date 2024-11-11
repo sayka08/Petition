@@ -21,11 +21,9 @@ class UserResponse(BaseModel):
     class Config:
         orm_mode = True
 
-
 class LoginRequest(BaseModel):
     username: str
     password: str
-
 
 class PetitionBase(BaseModel):
     title: str

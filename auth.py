@@ -8,7 +8,7 @@ import jwt
 
 SECRET_KEY = "your_secret_key"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60  # Срок действия токена
+ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
@@ -39,7 +39,7 @@ def get_user_from_token(db: Session, token: str):
     return db_user
 
 def get_current_user(
-    token: str = Query(...),  # Извлекаем токен из query параметра
+    token: str = Query(...),
     db: Session = Depends(get_db)
 ):
     return get_user_from_token(db, token)
