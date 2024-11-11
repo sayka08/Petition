@@ -8,8 +8,6 @@ services:
       - "8000:8000"
     environment:
       - SQL_DB_URL=${SQL_DB_URL}
-    volumes:
-      - ./db:/app/db
     networks:
       - petition_network
 
